@@ -1,0 +1,114 @@
+:host {
+  --black: #111;
+  --white: #fff;
+  --red: #d40027;
+  --pink: #ff8fc7;
+  --yellow: #ffd400;
+  --blue: #2f5bff;
+  --blue-light: #8fb0ff;
+  --green: #4fd18b;
+
+  display: block;
+  color: var(--black);
+  background: var(--white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+h1, h2, h3, p { margin: 0; }
+
+.sprite { position: absolute; width: 0; height: 0; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%);
+}
+.skip-link { position: absolute; left: -999px; background: var(--white); padding: .5rem 1rem; }
+.skip-link:focus { left: 0; z-index: 10; }
+
+.promo {
+  background: var(--black); color: var(--white); text-align: center;
+  padding: .5rem 1rem; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
+}
+
+.header {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1rem 2rem; border-bottom: 2px solid var(--black); flex-wrap: wrap;
+}
+.logo { font-weight: 900; font-size: 1.5rem; letter-spacing: -.03em; text-transform: uppercase; }
+.header nav ul { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.header nav a { font-weight: 700; text-transform: uppercase; font-size: .85rem; letter-spacing: .06em; }
+.header nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.header nav a.sale { color: var(--red); }
+.cart { font-weight: 700; font-size: .85rem; text-transform: uppercase; }
+
+.btn {
+  display: inline-block; background: var(--black); color: var(--white); border: 2px solid var(--black);
+  padding: .85rem 1.75rem; font-family: inherit; font-weight: 800; font-size: .9rem;
+  text-transform: uppercase; letter-spacing: .08em; border-radius: 999px; cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--white); color: var(--black); }
+
+.hero {
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem;
+  background: var(--yellow); padding: 4rem 2rem; overflow: hidden;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 900; line-height: .95;
+  letter-spacing: -.04em; text-transform: uppercase;
+}
+.hero p { font-size: 1.25rem; margin: 1.25rem 0 2rem; max-width: 28ch; }
+.hero-art { position: relative; min-height: 18rem; }
+.hero-art .sock { position: absolute; width: 9rem; height: 10.8rem; }
+.s1 { color: var(--red); left: 5%; top: 10%; transform: rotate(-12deg); }
+.s2 { color: var(--blue); left: 35%; top: 30%; transform: rotate(8deg); width: 11rem; height: 13.2rem; }
+.s3 { color: var(--pink); left: 65%; top: 5%; transform: rotate(18deg); }
+
+section h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 900; text-transform: uppercase;
+  letter-spacing: -.03em; margin-bottom: 1.5rem;
+}
+
+.categories, .products { padding: 3rem 2rem; }
+.categories ul, .products ul {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem;
+}
+.tile {
+  display: flex; align-items: flex-end; min-height: 12rem; padding: 1.25rem;
+  font-weight: 900; font-size: 1.5rem; text-transform: uppercase; color: var(--black);
+  border-radius: 1rem; transition: transform .2s;
+}
+.tile:hover { transform: translateY(-4px) rotate(-1deg); }
+
+.card-img {
+  display: grid; place-items: center; aspect-ratio: 1; border-radius: 1rem; margin-bottom: .75rem;
+  transition: transform .2s;
+}
+.card a:hover .card-img { transform: scale(1.03); }
+.card-img .sock { width: 55%; height: 66%; }
+.card h3 { font-size: 1rem; font-weight: 800; }
+.card p { color: #444; }
+
+.newsletter { background: var(--pink); text-align: center; padding: 4rem 1.5rem; }
+.newsletter p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+.newsletter form { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+.newsletter input {
+  padding: .85rem 1.25rem; border: 2px solid var(--black); border-radius: 999px;
+  font: inherit; min-width: 16rem; background: var(--white); color: var(--black);
+}
+
+.footer { background: var(--black); color: var(--white); padding: 2rem; text-align: center; font-size: .85rem; }
+
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; padding: 2.5rem 1.25rem; }
+  .header { padding: 1rem; }
+  .categories, .products { padding: 2rem 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
