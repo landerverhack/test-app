@@ -25,4 +25,6 @@ export class App {
     { name: 'Cherry Sock', price: '€14.00', color: 'var(--pink)', accent: 'var(--red)' },
     { name: 'Sunny Sock', price: '€12.00', color: 'var(--yellow)', accent: 'var(--blue)' },
   ];
+
+  // API Key = 82346823642342sioshdhshsiih
 }
